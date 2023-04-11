@@ -3,7 +3,7 @@
    
 
   <v-app>
-      <HelloWorld/>
+      <HomeView/>
     </v-app>
    
  
@@ -11,14 +11,15 @@
 
 <script>
 
-import HelloWorld from './components/HelloWorld.vue';
+
+import HomeView from './components/HomeView.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld
     
+    HomeView
 },
 
   data: () => ({

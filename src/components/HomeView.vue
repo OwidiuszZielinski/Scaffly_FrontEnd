@@ -1,86 +1,154 @@
 <template>
-  <v-app id="inspire">
-    <v-app-bar flat>
-      <v-container class="fill-height d-flex align-center">
-        <v-avatar
-          class="me-10 ms-4"
-          color="grey-darken-1"
-          size="32"
-        ></v-avatar>
+  <v-app id="inspire" class="hero ">
 
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          variant="text"
-        >
-          {{ link }}
-        </v-btn>
 
-        <v-spacer></v-spacer>
 
-        <v-responsive max-width="260">
-          <v-text-field
-            density="compact"
-            hide-details
-            variant="solo"
-          ></v-text-field>
-        </v-responsive>
-      </v-container>
+    <v-app-bar app color="#83817D" clipped-right>
+      <div :style="{ width: `${space}px`, height: `${space}px` }"></div>
+      <v-btn elevation=0 color="#83817D">
+        <v-toolbar-title link v-on:click="route('/')"
+          style="font-family: 'Copperplate Gothic Light'; font-size: 40px; font-weight: bold">
+          <vue-typer :text='"Scaffly"' :repeat="false"></vue-typer>
+        </v-toolbar-title>
+      </v-btn>
+
+      <div :style="{ width: `${space}px`, height: `${space}px` }"></div>
+      <v-btn elevation=0 color="#83817D">
+        <vue-typer style="font-family: 'Copperplate Gothic Light'; font-size: 30px; font-weight: bold"
+          :text='"The best invoice generator for scaffolding services"' :repeat="false"></vue-typer>
+      </v-btn>
+      <v-col>
+      </v-col>
+
+      <v-btn elevation=5 link v-on:click="route('/login')" color="#DBA02C">
+        <v-icon>mdi-account</v-icon>
+        <v-col>
+          LOGIN
+        </v-col>
+      </v-btn>
+      <div :style="{ width: `${space}px`, height: `${space}px` }"></div>
+
+      <v-btn elevation=5 link v-on:click="route('/register')" color="#DBA02C">
+        <v-icon>mdi-account-plus</v-icon>
+        <v-col>
+          REGISTER
+        </v-col>
+      </v-btn>
+
+
     </v-app-bar>
 
-    <v-main class="bg-grey-lighten-3">
-      <v-container>
-        <v-row>
-          <v-col cols="2">
-            <v-sheet rounded="lg">
-              <v-list rounded="lg">
-                <v-list-item
-                  v-for="n in 5"
-                  :key="n"
-                  link
-                >
-                  <v-list-item-title>
-                    List Item {{ n }}
-                  </v-list-item-title>
-                </v-list-item>
+    <template>
+      <v-row>
+        <v-col cols="7">
+          <v-container>
+            <!-- content for the left half of the page -->
+          </v-container>
+        </v-col>
+        <v-col cols="5">
 
-                <v-divider class="my-2"></v-divider>
+          <v-container class="left-side fill-height">
+            <v-col>
 
-                <v-list-item
-                  link
-                  color="grey-lighten-4"
-                >
-                  <v-list-item-title>
-                    Refresh
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-sheet>
-          </v-col>
+              <v-row justify="center" align="center">
+                <h1 style="font-family: 'Copperplate Gothic Light'; font-size: 30px; font-weight: bold">
+                  The most important advantages of the tool :</h1>
+              </v-row>
+              <div :style="{ width: `${space}px`, height: `${space}px` }"></div>
 
-          <v-col>
-            <v-sheet
-              min-height="70vh"
-              rounded="lg"
-            >
-              <!--  -->
-            </v-sheet>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
+              <v-row justify="center" align="center">
+                <v-card class=" mt-3 ms-1 mr-2 " max-width="250" height="170"
+                color="#83817D"
+                style="font-family: 'Copperplate Gothic'; font-weight: bold">
+                  <v-card-title>Time saving</v-card-title>
+                  <v-card-text>
+                    You will quickly calculate the amount of service performed.
+                  </v-card-text>
+                </v-card>
+                <v-card class=" mt-3 ms-1 mr-2 " max-width="250" height="170"
+                color="#83817D"
+                style="font-family: 'Copperplate Gothic'; font-weight: bold">
+                  <v-card-title>Automation</v-card-title>
+                  <v-card-text>
+                    With one click, you will create an invoice for the client with a list of services performed.
+                  </v-card-text>
+                </v-card>
+              </v-row>
+
+              <v-row justify="center" align="center">
+                <v-card class=" mt-3 ms-1 mr-2 " max-width="250" height="200"
+                color="#83817D"
+                style="font-family: 'Copperplate Gothic'; font-weight: bold">
+                  <v-card-title>
+                    History</v-card-title>
+                  <v-card-text>
+                    If you decide to create an account, you will receive the right to store the history documents and
+                    clients.
+                  </v-card-text>
+                </v-card>
+                <v-card class=" mt-3 ms-1 mr-2 " max-width="250" height="200"
+                color="#83817D"
+                style="font-family: 'Copperplate Gothic'; font-weight: bold">
+                  <v-card-title>
+                    Anonymity</v-card-title>
+                  <v-card-text>
+                    If you do not create an account, you can generate documents without saving your and the client's data
+                    anywhere.
+                  </v-card-text>
+                </v-card>
+              </v-row>
+              <div :style="{ width: `${space}px`, height: `100px` }"></div>
+              <v-row justify="center" align="center">
+                <v-btn elevation=5 link v-on:click="route('/login')" color="#DBA02C">
+                  <v-col>
+                    Get started
+                  </v-col>
+                </v-btn>
+              </v-row>
+
+
+            </v-col>
+
+          </v-container>
+        </v-col>
+      </v-row>
+    </template>
+
+
+
+
+
   </v-app>
 </template>
+<style scoped>
+.square-button {
+  width: 50px;
+  height: 50px;
+}
+
+.left-side {
+  background-color: #181818;
+  /* Set a black background color */
+  color: white;
+  /* Set white text color for contrast */
+}
+
+.hero {
+  background: url('../assets/HomeBackground.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+</style>
 
 <script>
-  export default {
-    data: () => ({
-      links: [
-        'Dashboard',
-        'Messages',
-        'Profile',
-        'Updates',
-      ],
-    }),
+
+export default {
+  data() {
+    return {
+      space: 30
+    }
   }
+}
+
+
 </script>
