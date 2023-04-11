@@ -1,4 +1,4 @@
-# scaffly
+## scaffly
 
 ## Project setup
 ```
